@@ -36,6 +36,6 @@ Definition of Test Driven Development or TDD
 3. CONSTRAINTS
 - Fron reviewing the problem set, valid palindromes are at least two adjacent characters so `2 < n` where n is length of input string
 - As maximum length constraints were not given, in this scenario max length of input string = 100
-- Constraints are: `2 < n < 100` where `n` is length of input string
+- Constraints are: `2 <= n <= 100` where `n` is length of input string
 - Given the approach of TDD and the assumptions highlighted above, the input string will require cleansing of any invalid characters  
 - From reviewing the test cases, the outputs are sorted by length first then by size of the output string
