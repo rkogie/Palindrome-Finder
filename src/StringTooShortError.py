@@ -1,0 +1,2 @@
+class StringTooShortError(ValueError):
+    pass
