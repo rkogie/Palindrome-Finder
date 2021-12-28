@@ -12,11 +12,11 @@ def run():
         
         # Do palindrome 
         palindrome = Palindrome(valid_input)
-        print(palindrome.get_palindromes())
+        print(palindrome.sort_by_largest())
     except (Exception) as error:
         print(error)
     finally:
-        print(f"--------End Program--------")
+        print(f"\n--------End Program--------")
 
 
 

@@ -1,8 +1,12 @@
+import Constants as c
+
 class Palindrome:
+    INVALID_LENGTH = 1
+
     def __init__(self, valid_input: str):
         self._valid_input = valid_input
+        
 
-    
     def __str__(self):
         return f"{self._valid_input}"
     
@@ -10,7 +14,7 @@ class Palindrome:
     def get_palindromes(self):
         # Find the palindromes
         
-        palindrome_set = set()
+        palindrome_set = []
         pivot = 0.0
         while (pivot < len(self._valid_input)):
             radius = pivot - int(pivot)
@@ -19,7 +23,7 @@ class Palindrome:
             (pivot - radius) >= 0 and 
                     self._valid_input[int(pivot - radius)] == self._valid_input[int(pivot + radius)]):
                 
-                palindrome_set.add(
+                palindrome_set.append(
                     self._valid_input[int(pivot - radius): int(pivot + radius + 1)])
                 radius += 1
             
@@ -28,21 +32,17 @@ class Palindrome:
 
 
 
+    def return_valid_palindromes(self):
+        found_palindromes = self.get_palindromes()
+        return [element for element in found_palindromes if len(element) > self.INVALID_LENGTH]
 
 
 
+    def sort_by_largest(self):
+        found_palindromes = self.return_valid_palindromes()
+        return sorted(found_palindromes, key=len, reverse=True)
 
-
-
-
-
-
-
-
-        # Store them in a map - of arrays, arranged by length desc order
-        # Print the map sorted by length
-
-
+            
 
         #Sorting by Length and start index (Java)
         """
