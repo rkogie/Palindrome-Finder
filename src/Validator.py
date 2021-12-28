@@ -1,6 +1,6 @@
 import Constants as c
 from WrongInputsError import WrongInputsError
-from StringTooShortError import StringTooShortError
+from StringOutOfBoundsError import StringOutOfBoundsError
 from StringCleanser import StringCleanser
 
 
@@ -9,10 +9,6 @@ class Validator:
     # Check empty inputs
     def is_null(self, s:str):
         return s.isspace()
-    
-    # Check for Numbers
-    def is_all_numbers(self, s: str):
-        return s.isdigit()
 
     # Check input size
     def is_correct_size(self, s: str):
@@ -20,20 +16,27 @@ class Validator:
         return size >= c.RANGE['min'] and size <= c.RANGE['max']
 
 
-    # Factory method to validate input before returning string back to main program
-    def validate_inputs(self, s: str):
+    
+    def validate(self, s: str):
+        """
+        @Desc: Validates the string inputs against common test cases
+        @Args: s(str): raw user input
+        @Returns: s(str): formatted string 
+        
+        """
 
         if (self.is_null(s)):
-            raise WrongInputsError("Entered null characters, please try again: ")
+            raise WrongInputsError("No usable value detected in inputs, please try again. ")
 
         s = StringCleanser.cleanse(s)
 
         if self.is_correct_size(s):
             return s.upper()
 
-        raise StringTooShortError(
-            f"Your input string was too short.\
-                nPlease ensure its between {c.RANGE['min']} and {c.RANGE['max']}")
+        raise StringOutOfBoundsError(
+            f"Your input string was too short."
+            f" Please ensure its between" 
+            f" {c.RANGE['min']} and {c.RANGE['max']} characters")
 
 
 

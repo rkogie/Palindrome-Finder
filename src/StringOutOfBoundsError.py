@@ -1,0 +1,2 @@
+class StringOutOfBoundsError(ValueError):
+    pass

@@ -1,19 +1,25 @@
-
 from Validator import Validator
+from Palindrome import Palindrome
 
-def main():
+def run():
     
-    validate_inputs = Validator()
-    test_string = '      45652%@$@^&$^$Aa&*#^36796^@&$     '
+    validator = Validator()
+    test_string = '  6!*$)@  4565ABCBAHELLOHOWRACECARAREYOUILOVEUEVOLIIAMAIDOINGGOOD2%@$ @^&$^$ &*#^36796^ @& $           '
     
     try:
-        result = validate_inputs.validate_inputs(test_string)
-        print(result)
+        # Validate
+        valid_input = validator.validate(test_string)
+        
+        # Do palindrome 
+        palindrome = Palindrome(valid_input)
+        print(palindrome.get_palindromes())
     except (Exception) as error:
         print(error)
+    finally:
+        print(f"--------End Program--------")
 
 
 
 
 if __name__ == "__main__":
-    main()
+    run()
