@@ -42,7 +42,7 @@ IMPROVEMENTS
 ------------
 - Split source files into separate python modules/packages - could not get it to work due to Python's package path system
 - Launch as browser based application utilizing web framework (Django, Flask, React/Vue/Angular)
-- General refactoring into decoupled modules, resusable compoenents and algorithm performance
+- General refactoring into decoupled modules, resusable components and algorithm performance optimization
 
 
 TIME COMPLEXITY ANALYSIS
