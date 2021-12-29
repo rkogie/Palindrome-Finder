@@ -47,8 +47,8 @@ IMPROVEMENTS
 
 TIME COMPLEXITY ANALYSIS
 ------------------------
-- For the raw palindrome algorithm, it gives a worst case scenario quadratic O(n^2) runtime due to the nesting of while loops
-- If you include the validation and string cleansing logic, this does increase the runtime further due to the inbuilt Python methods used, but the trade off is building 
+- For the raw palindrome algorithm, it gives a worst case scenario logarithmic O(n log n) runtime due to the nesting of while loops as the `radius` expands outwards on each iteration
+- If you include the validation and string cleansing logic, this does increase the application runtime further due to the inbuilt Python methods used, but the trade off is building 
 a more robust application to run against invalid user inputs and handle them appropriately
 
 
