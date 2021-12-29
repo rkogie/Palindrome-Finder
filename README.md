@@ -60,13 +60,14 @@ a more robust application to run against invalid user inputs and handle them app
     Installing WSL2 Update Package: https://docs.microsoft.com/en-us/windows/wsl/install-manual
     Installing Linux distribution => visit the Microsoft Store (recommend Ubuntu 20.04 LTS)
     Configure UNIX user/password
-- If Docker is already installed (run `docker --version` to confirm), run `docker search my-palindrome-app`
+- If Docker is already installed (run `docker --version` to confirm), run `docker search rkogie0308/my-palindrome-app`
 - Results should show:
 ```
 NAME: rkogie0308/my-palindrome-app 
 DESCRIPTION: Repository for palindrome application
 ```
-- As the application includes user input, please run with - `docker run --interactive --tty my-palindrome-app`
+- Run `docker pull rkogie0308/my-palindrome-app` if you want a local copy in your local machine. If not, skip this step
+- As the application includes user input, please run with - `docker run --interactive --tty rkogie0308/my-palindrome-app`
 
 
 # RUN IN YOUR ENVIRONMENT (if Docker image fails)
