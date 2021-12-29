@@ -7,7 +7,7 @@
 PROGRAM FEATURES
 ----------------
 - Program encapsulated as a mini console application with game logic and basic user interface/screen prompts
-- Built with validation logic to capture edge and corner cases (please follow instructions under `RUN IN YOUR ENVIRONMENT` to run tests)
+- Built with validation logic to capture edge and corner cases (please follow instructions under `RUN IN YOUR ENVIRONMENT` to view/run tests)
 
 
 SOFTWARE DESIGN PATTERNS
@@ -31,4 +31,47 @@ MISSING FUNCTIONALITY (from Requirements)
 - Find start index position of found palindrome
 
 
-# RUN AS CONTAINER
+
+KNOWN BUGS/INEFFICIENCIES 
+----------
+- In `Palindrome.py`, function `find_palindrome()` ideally should implement condition checks in case the palindrome list is null, but this is only feasible within the `return_palindromes()` scope
+- `find_palindrome()` should implicitly strip all invalid palindromes without needing an additional helper function `strip_invalid_palindromes()`, but to maintain lean functions, this functionality was exported to its own function. 
+
+
+IMPROVEMENTS
+------------
+- Split source files into separate python modules/packages - could not get it to work due to Python's package path system
+- Launch as browser based application utilizing web framework (Django, Flask, React/Vue/Angular)
+- General refactoring into decoupled modules, resusable compoenents and algorithm performance
+
+
+TIME COMPLEXITY ANALYSIS
+------------------------
+- For the raw palindrome algorithm, it gives a worst case scenario quadratic O(n^2) runtime due to the nesting of while loops
+- If you include the validation and string cleansing logic, this does increase the runtime further due to the inbuilt Python methods used, but the trade off is building 
+a more robust application to run against invalid user inputs and handle them appropriately
+
+
+
+# RUN APP AS DOCKER IMAGE
+- Install Docker (OS dependent) - https://docs.docker.com/get-docker/
+- Open a terminal shell (OS Dependent - CMD or bash) 
+- **Note: Windows users may have additional steps to install WSL2 and Ubuntu from the MS Store App:** 
+    Installing WSL2 Update Package: https://docs.microsoft.com/en-us/windows/wsl/install-manual
+    Installing Linux distribution => visit the Microsoft Store (recommend Ubuntu 20.04 LTS)
+    Configure UNIX user/password
+- If Docker is already installed (run `docker --version` to confirm), run `docker search my-palindrome-app`
+- Results should show:
+```
+NAME: rkogie0308/my-palindrome-app 
+DESCRIPTION: Repository for palindrome application
+```
+- As the application includes user input, please run with - `docker run --interactive --tty my-palindrome-app`
+
+
+# RUN IN YOUR ENVIRONMENT (if Docker image fails)
+- Fork or clone repo to your local machine
+- Install Python - https://www.python.org/downloads/
+- Open src files in IDE of choice (**VS Code or PyCharm recommended**)
+- Click run application. Ensure script path is set to `Game.py` if prompted
+- To run against test cases, navigate to `Tests.py`, copy the test strings labelled under `FAILED_TEST_CASES` dictionary into your console, when prompted with message: `"Please type or paste your inputs to the console:"` during runtime

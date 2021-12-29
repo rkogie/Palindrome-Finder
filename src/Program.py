@@ -1,5 +1,6 @@
 from Validator import Validator
 from Palindrome import Palindrome
+import GameAssets as ga
 import time
 
 
@@ -7,7 +8,7 @@ class Program:
     def run(self):
         
         validator = Validator()
-        test_string = input("Enter your string: ")
+        test_string = input(ga.PALINDROME_PROMPT)
         
         def run_palindrome_finder():
             """
