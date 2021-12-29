@@ -1,25 +1,34 @@
 from Validator import Validator
 from Palindrome import Palindrome
+import time
 
-def run():
-    
-    validator = Validator()
-    test_string = '  6!*$)@  4565ABCBAHELLOHOWRACECARAREYOUILOVEUEVOLIIAMAIDOINGGOOD2%@$ @^&$^$ &*#^36796^ @& $           '
-    
-    try:
-        # Validate
-        valid_input = validator.validate(test_string)
+
+class Program: 
+    def run(self):
         
-        # Do palindrome 
-        palindrome = Palindrome(valid_input)
-        print(palindrome.sort_by_largest())
-    except (Exception) as error:
-        print(error)
-    finally:
-        print(f"\n--------End Program--------")
+        validator = Validator()
+        test_string = input("Enter your string: ")
+        
+        def run_palindrome_finder():
+            """
+            @Desc: Utility function to run the program - find palindromes
+            @Args: N/A
+            @Returns: None (void) - prints the list of palindromes
+            """
+            valid_input = validator.validate(test_string)
+            palindrome = Palindrome(valid_input)
+            print(palindrome.return_palindromes())
 
+        try:
 
+            start = time.time()
+            
+            run_palindrome_finder()
 
+            end = time.time()
+            print(f"\nProgram Runtime: {end - start} seconds")
 
-if __name__ == "__main__":
-    run()
+        except (Exception) as error:
+            print(error)
+        finally:
+            print(f"\n--------End Program--------")

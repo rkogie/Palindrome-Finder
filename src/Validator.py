@@ -8,7 +8,8 @@ class Validator:
 
     # Check empty inputs
     def is_null(self, s:str):
-        return s.isspace()
+       return s is None or s.isspace() or s == ''
+             
 
     # Check input size
     def is_correct_size(self, s: str):
@@ -22,7 +23,6 @@ class Validator:
         @Desc: Validates the string inputs against common test cases
         @Args: s(str): raw user input
         @Returns: s(str): formatted string 
-        
         """
 
         if (self.is_null(s)):
