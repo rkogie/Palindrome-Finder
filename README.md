@@ -36,6 +36,7 @@ KNOWN BUGS/INEFFICIENCIES
 ----------
 - In `Palindrome.py`, function `find_palindrome()` ideally should implement condition checks in case the palindrome list is null, but this is only feasible within the `return_palindromes()` scope
 - `find_palindrome()` should implicitly strip all invalid palindromes without needing an additional helper function `strip_invalid_palindromes()`, but to maintain lean functions, this functionality was exported to its own function. 
+- Algorithm produces duplicates outputs as valid returned substrings
 
 
 IMPROVEMENTS
