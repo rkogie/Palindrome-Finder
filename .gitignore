@@ -7,7 +7,7 @@ __pycache__/
 Dockerfile
 
 #Asset
-assets/
+assets
 
 # C extensions
 *.so
